@@ -36,5 +36,5 @@ export async function connctDB(): Promise<typeof mongoose> {
     })
     cached.conn = await cached.promise;
     (globalThis as unknown as {mongooseCage: CachedMongoose}).mongooseCage = cached
-    return cached.promise
+    return cached.conn
 }

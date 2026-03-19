@@ -1,7 +1,5 @@
 
-export interface ArticleDisplaySection{
-    title:string
-}
+export type ArticleDisplaySection = 'editorPickPrimary' | 'editorPickSecondary' | 'trending' | 'slider' | 'mostRecent' | 'mostRecentGrid' | 'gridAndAds'
 
 export interface  ArticleMeta{
 author:string;
@@ -10,9 +8,9 @@ category:string;
 categoryHref:string;
 date:string;
 readingTime:string;
-displaySection:string;
-authorAvatarUrl?: ArticleDisplaySection
-  }  ;
+displaySection:ArticleDisplaySection ;
+authorAvatarUrl?: string;
+  } ;
 
 export interface Article{
     _id: string;
@@ -20,6 +18,7 @@ export interface Article{
     image:string;
     excerpt?:string;
     caption?:string;
-    meta:string
+    meta: ArticleMeta;
+    tags?:string[];
 
 }

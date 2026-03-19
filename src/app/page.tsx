@@ -1,6 +1,10 @@
-import React from 'react'
+import { getHomepageData } from "@/lib/data"
 
-const HomePage = () => {
+const HomePage =  async () => {
+  const { articles} = await getHomepageData()
+ const {edtorpicksecondary} = articles
+ console.log(edtorpicksecondary)
+
   return (
     <div>Home Page</div>
   )
